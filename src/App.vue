@@ -232,6 +232,7 @@ body {
   text-transform: uppercase;
   font-size: 90px;
   z-index: 1000;
+  pointer-events: none;
   text-shadow:
   0 0 7px var(--color),
   0 0 10px var(--color),
