@@ -16,22 +16,6 @@ const io = new Server(server, {
 
 app.use(serveStatic('./dist'));
 
-const MAX_EVENT = 30;
-
-function broadcastEvent(config, eventName, data) {
-  data.id = eventId;
-  data.url = config.url;
-  data.time = Date.now();
-  data.event = eventName;
-
-  config.events.unshift(data);
-  if (config.events.length > MAX_EVENT) {
-    config.events = config.events.slice(0, MAX_EVENT);
-  }
-  io.emit('update', data);
-  eventId += 1;
-}
-
 const chess = require('chess.js');
 
 const game = new chess.Chess();
